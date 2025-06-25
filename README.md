@@ -1,4 +1,4 @@
-# rec0n
+# rec0n — Automated Subdomain & Sensitive Data Recon Tool ⚡
 
 > ⚡ A fully automated subdomain reconnaissance and sensitive data discovery toolkit.
 
