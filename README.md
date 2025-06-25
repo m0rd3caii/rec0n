@@ -2,7 +2,7 @@
 
 > ⚡ A fully automated subdomain reconnaissance and sensitive data discovery toolkit.
 
-![image](https://github.com/user-attachments/assets/4f1d6e40-2a35-4ffb-b432-ff7728ad3fe2)
+![poc](https://github.com/user-attachments/assets/5ff71791-3563-42c9-bf22-56eb3244d7e
 
 ---
 
@@ -34,3 +34,11 @@ Install the following tools before using `rec0n`:
 ```bash
 pip3 install -r requirements.txt
 ```
+
+❤️ Credits
+Inspired by tools from:
+
+- ProjectDiscovery
+- TomNomNom
+- s0md3v
+- The Bug Bounty community
