@@ -2,7 +2,7 @@
 
 > ⚡ A fully automated subdomain reconnaissance and sensitive data discovery toolkit.
 
-[poc](https://raw.githubusercontent.com/m0rd3caii/rec0n/refs/heads/main/poc.gif)
+![poc](https://raw.githubusercontent.com/m0rd3caii/rec0n/refs/heads/main/poc.gif)
 
 ---
 
