@@ -109,14 +109,22 @@ def main():
         "Querying archive.org for historic URLs..."
     )
 
-    # 6. Filter sensitive file extensions
+    # 6. Filter sensitive file extensions and keywords
     print(f"{Fore.BLUE}[+] Filtering sensitive file extensions...{Style.RESET_ALL}")
-    extensions = r"\.xls|\.xml|\.xlsx|\.sql|\.doc|\.pptx|\.txt|\.zip|\.tar\.gz|\.tgz|\.bak|\.7z|\.rar|\.log|\.cache|\.secret|\.db|\.backup|\.yml|\.gz|\.config|\.csv|\.yaml|\.md5|\.exe|\.dll|\.bin|\.sh|\.tar|\.deb|\.rpm|\.iso|\.img|\.apk|\.msi|\.dmg|\.tmp|\.crt|\.pem|\.key|\.pub|\.asc"
+    extensions = (
+        r"/(admin|config|backup|logs|uploads|tmp|var|wp-content|vendor|node_modules|\.git|\.svn)|"
+        r"\.log|\.sql|\.env|\.conf|\.bak|\.txt|\.json|\.xml|\.yaml|\.yml|\.ini|\.pem|\.key|\.cer|\.crt|"
+        r"\.pfx|\.zip|\.tar|\.gz|\.7z|\.rar|\.tgz|\.rdp|\.ppk|\.sh|\.bat|\.ps1|\.php|\.py|\.java|\.js|"
+        r"\.html|\.htaccess|\.DS_Store|config|settings|secrets|credentials|password|api_key|database|"
+        r"dump|env|\.gitignore|\.htpasswd|wp-config\.php|robots\.txt|sitemap\.xml|web\.config|"
+        r"package-lock\.json|composer\.lock"
+    )
     run_command_show_output(
-        f"""cat {out_dir}/out.txt | uro | grep -E "{extensions}" """,
+        f"""cat {out_dir}/out.txt | uro | grep -Ei "{extensions}" """,
         "Extracting potentially sensitive file URLs...",
         output_file=f"{out_dir}/sensitive_files.txt"
     )
+
 
     # 7. Check if sensitive URLs are still alive — SHOW LIVE
     run_command_show_output(
